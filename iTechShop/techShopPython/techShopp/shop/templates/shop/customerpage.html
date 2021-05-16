@@ -1,0 +1,212 @@
+
+{% extends 'shop/base.html' %}
+
+{% block title %}Trang chủ{% endblock%}
+
+{%block content%}
+{% load mathfilters %}
+<div class="main">
+</div>
+<div class="form_background">
+    <div class="form__container">
+        <div class="form__detail">
+
+                <div class="form__heading">
+                    <h3>Điền thông tin khách hàng</h3>
+                </div>
+            <form class="form_infor" action="" method="POST">
+                {% csrf_token %}
+                <div class="form__row">
+<!--                    <input class="form_input" type="text" required id="name" name="name">-->
+<!--                    <label class="form_label" for="name">Họ và Tên:</label><br>-->
+                    {{form.name}}
+
+                </div>
+                <div class="form__row">
+<!--                    <input class="form_input" type="text" required id="adress" name="name">-->
+<!--                    <label class="form_label" for="adress">Địa chỉ:</label><br>-->
+                    {{form.address}}
+
+                </div>
+                <div class="form__row">
+<!--                    <input class="form_input" type="text" required id="phone" name="phone">-->
+<!--                    <label class="form_label" for="phone">Số điện thoại:</label><br>-->
+                    {{form.mobile}}
+
+                </div>
+                <div class="form__row">
+<!--                    <input class="form_input" type="text" required id="mail" name="mail">-->
+<!--                    <label class="form_label" for="mail">Email:</label>-->
+                    {{form.email}}
+
+                </div>
+                <button class="submit_button" >Xác Nhận</button>
+            </form>
+            <div class="submit_button_wrap">
+
+
+            </div>
+<!--            <div class="form_bill">-->
+<!--                <div class="form__heading">-->
+<!--                    <h3>Phương thức thanh toán</h3>-->
+<!--                </div>-->
+<!--                <div class="radio__wrapper">-->
+
+<!--                    <input class="radio__mark" name="bill" type="radio" id="radio01">-->
+<!--                    <label class="radio__label" for="radio01">Trả thẳng khi giao hàng</label>-->
+
+
+<!--                    <input class="radio__mark" name="bill" type="radio" id="radio02">-->
+<!--                    <label class="radio__label" for="radio02">Trả góp</label>-->
+
+<!--                    <input class="radio__mark" name="bill" type="radio" id="radio03">-->
+<!--                    <label class="radio__label" for="radio03">Chuyển khoản</nav></label>-->
+
+<!--                </div>-->
+<!--                <div class="bill_content">-->
+<!--                    <div class="radio_content _radio01">-->
+<!--                        <div class="form__row">-->
+<!--                            <input class="form_input" type="text" required id="name_1" name="name_1">-->
+<!--                            <label class="form_label" for="name_1">Họ và Tên người nhận hàng:</label><br>-->
+
+<!--                        </div>-->
+<!--                        <div class="form__row">-->
+<!--                            <input class="form_input" type="text" required id="phone_1" name="phone_1">-->
+<!--                            <label class="form_label" for="phone_1">Số điện thoại người nhận</label>-->
+
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="radio_content _radio02">-->
+<!--                        <div class="form__row">-->
+<!--                            <input class="form_input" type="text" required id="id" name="id">-->
+<!--                            <label class="form_label" for="id">Số CMND:</label><br>-->
+
+<!--                        </div>-->
+<!--                        <div class="form__row">-->
+<!--                            <input class="form_input form_input_date" type="date" id="id_time" name="id_time">-->
+<!--                            <label class="form_label" for="id_time">Ngày cấp:</label><br>-->
+
+<!--                        </div>-->
+<!--                        <div class="form__row">-->
+<!--                            <input class="form_input" type="text" required id="id_adress" name="id_adress">-->
+<!--                            <label class="form_label" for="id_adress">Nơi cấp:</label><br>-->
+
+
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="radio_content _radio03">-->
+<!--                        ccccccccccccccc-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+
+
+        </div>
+        <div class="cart_wrapper">
+            <h2>Giỏ hàng</h2>
+            <ul class="header__cart-list-item">
+                <!-- Cart item -->
+
+              {% for key,value in request.session.cart.items %}
+
+                <li class="header__cart-item">
+                    <img src="https://xgear.vn/wp-content/uploads/2021/02/GF63-THIN-10SC-014VN.jpg" alt=""
+                         class="header__cart-img">
+                    <div class="header__cart-item-info">
+                        <div class="header__cart-item-head">
+                            <h5 class="header__cart-item-name">{{value.name}}</h5>
+                            <div class="header__cart-item-price-wrap">
+                                <span class="header__cart-item-mutiply">x</span>
+                                <span class="header__cart-item-qnt">{{value.num}}</span>
+                                <span class="header__cart-item-price">{{value.price|mul:value.num}}VNĐ</span>
+
+
+                            </div>
+                        </div>
+                        <div class="header__cart-item-body">
+                                    <span class="header__cart-item-description">
+                                        Danh mục: LAPTOP
+                                    </span>
+                            <span class="header__cart-item-remove">Xóa</span>
+                        </div>
+                    </div>
+                </li>
+
+
+              {% endfor %}
+                       <span><strong>Tổng cộng: {{total}}</strong></span>
+            </ul>
+
+        </div>
+    </div>
+
+</div>
+
+<div class="content section" style="max-width:2000px;margin-top: 40px;margin-bottom: 40px;">
+    <img class="mySlides" src="https://xgear.vn/wp-content/uploads/2020/11/TUF-F15-1.jpg" style="width:100%">
+    <img class="mySlides"
+         src="https://xgear.vn/wp-content/uploads/2021/03/NB_Vn_LNY-Promotion_BannerW885xH522px_1_XGear.jpg"
+         style="width:100%">
+    <img class="mySlides" src="https://xgear.vn/wp-content/uploads/2020/12/Asus-AMD-4000-series-slider.jpg"
+         style="width:100%">
+    <img class="mySlides" src="https://xgear.vn/wp-content/uploads/2021/03/bão-mờ-si-slider-1.jpg" style="width:100%">
+    <img class="mySlides" src="https://xgear.vn/wp-content/uploads/2020/12/freebuild-slider_compressed.jpg"
+         style="width:100%">
+</div>
+<script>
+          var myIndex = 0;
+          carousel();
+
+          function carousel() {
+            var i;
+            var x = document.getElementsByClassName("mySlides");
+            for (i = 0; i < x.length; i++) {
+              x[i].style.display = "none";
+            }
+            myIndex++;
+            if (myIndex > x.length) {myIndex = 1}
+            x[myIndex-1].style.display = "block";
+            setTimeout(carousel, 2000); // Change image every 2 seconds
+          }
+
+</script>
+<div class="ads">
+    <div class="grid">
+        <div class="grid__row">
+            <div class="grid__column-2-4">
+                <img width="270" height="427"
+                     src="https://xgear.vn/wp-content/uploads/2021/02/asus-trang-ch%E1%BB%A7.jpg" alt=""
+                     class="ads-img">
+            </div>
+            <div class="grid__column-2-4">
+                <img width="270" height="427"
+                     src="https://xgear.vn/wp-content/uploads/2020/12/MSI-trang-ch%E1%BB%A7.jpg" alt="" class="ads-img">
+            </div>
+            <div class="grid__column-2-4">
+                <img width="270" height="427" src="https://xgear.vn/wp-content/uploads/2020/02/PC.jpg" alt=""
+                     class="ads-img">
+            </div>
+            <div class="grid__column-2-4">
+                <img width="270" height="427"
+                     src="https://xgear.vn/wp-content/uploads/2020/02/M%C3%A0n-h%C3%ACnh-mua-k%C3%A8m-PC.jpg" alt=""
+                     class="ads-img">
+            </div>
+            <div class="grid__column-2-4">
+                <img width="270" height="427" src="https://xgear.vn/wp-content/uploads/2020/02/Acer-Gaming.jpg" alt=""
+                     class="ads-img">
+            </div>
+        </div>
+    </div>
+</div>
+<footer class="footer">
+    <div class="footer__logo">
+        <img class="footer__logo-img footer" src="https://cdn.worldvectorlogo.com/logos/itech.svg"
+             alt="Itech logo vector">
+    </div>
+    <p class="footer-text">ITECH chuyên Laptop Gaming MSI & Asus & Acer, máy tính PC chính hãng</p>
+    <p class="footer-text">Powered by Team 7</p>
+</footer>
+</div>
+
+{%endblock%}
+

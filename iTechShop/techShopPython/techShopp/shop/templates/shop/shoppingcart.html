@@ -1,0 +1,115 @@
+<section id="cart">
+  <div class="container">
+    <div class="row">
+      <div class="title_page">
+        <ul class="list-inline">
+          <li><a href="index.html"></a></li>
+          <li><i class="fa fa-angle-right" aria-hidden="true"></i></li>
+          <li>Giỏ hàng</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="row c_Detail">
+    <div class="col-sm-9 col-sm-push-3">
+      <form action="handle_cart.html?&action=update_all" method="post">
+        <div class="table-responsive img_cart">
+          <table class="table table-bordered table-hover">
+            <tr>
+              <th style="width: 5%"; class="text-center" >STT</th>
+              <th style="width: 15%"; class="text-center" >Ảnh sản phẩm</th>
+              <th style="width: 25%"; class="text-center" >Tên sản phẩm</th>
+              <th style="width: 15%"; class="text-center" >Đơn giá</th>
+              <th style="width: 10%"; class="text-center" >Số lượng</th>
+              <th style="width: 15%"; class="text-center" >Thành tiền</th>
+              <th style="width: 5%"; class="text-center" >Xóa</th>
+            </tr>
+            <form method="post" action="" id="myForm"></form>
+            <tr>
+              <td>1</td>
+              <td><img style="height: 50px; width: 50px; margin-left: auto;
+              margin-right: auto;" src="" class="img-responsive text-center"
+              alt="">
+              </td>
+              <td>
+                Squid Stuff Meat
+              </td>
+              <td class="text-danger">95000<sup><u>đ</u></sup></td>
+              <td>
+                <input style="width: 60px;" type="number" id="quantitys" name="quantitys[]"
+                value="2" min="1">
+                <input type="hidden" name="id[]" value="99">
+              </td>
+              <td class="text-danger">190000<sup><u>đ</u></sup></td>
+              <td><a href="handle_cart.html?id=99&action=delete" onclick="return
+                confirm('Bạn có chắc chắn xóa không?')"><i class="fa fa-trash-o"></i> </a></td>
+              </tr>
+
+            <tr class="end">
+              <td colspan="4">
+                <a href="product.html" class="btn btn-button">+ Mua thêm</a>
+                <button class="btn btn-button add-quantity" name="all">Cập nhật</button>
+                <a href="handle_cart.html?&action=deleteall" class="btn btn-button" onclick="return confirm('bạn có chắc chắn hủy đơn hàng này không?')">Hủy đơn hàng</a>
+              </td>
+              <td class="text-right">
+                Tỗng cộng:
+              </td>
+              <td colspan="2" class="text-danger text-left">
+                <strong>  470000<sup><u>đ</u></sup></strong>
+              </td>
+            </tr>
+          </table>
+
+        </div>
+      </form>
+
+      <div class="panel-container">
+        <h3>Thông tin đặt hàng</h3>
+        <p>Vui lòng điền đầy đủ và chính xác thông tin để chúng tôi hoàn thành đơn hàng!</p>
+        <form class="form-horizontal" action="" method="post">
+          <div class="form-group">
+            <div class="col-sm-6">
+              <input type="text" name="name" value="Nguyễn Minh Đức" class="form-control"
+              placeholder="Họ và tên(Bắt buộc)"required="">
+            </div>
+            <div class="col-sm-6">
+            <input type="number" name="phone" min="0" class="form-control" value="0918975776"
+              placeholder="Họ và tên(Bắt buộc)">
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-6">
+              <input type="email" name="email" value="ducnhoxlatui@gmail.com" class="form-control"
+              placeholder="Emai(Bắt buộc)"required="">
+            </div>
+            <div class="col-sm-6">
+            <textarea type="text" name="Content" min="0" class="form-control"
+                      placeholder="Nội dung" rows="5"></textarea>
+            </div>
+          </div>
+          <div class="text-center">
+            <button type="submit" class="btn btn-button"><a href="bill.html">Đặt hàng</a>
+            </button>
+          </div>
+        </form>
+      </div>
+
+    </div>
+    <div class="col-sm-3 col-sm-pull-9">
+      <div class="sidebar">
+        <div class="sb_item">
+          <h4>Danh mục</h4>
+          <ul class="list-unstyled menu1">
+            <li><a href="danh-muc.html?id=1">Món khai vị</a>
+            </li>
+          </ul>
+          <ul class="list-unstyled menu1">
+            <li><a href="danh-muc.html?id=1">Khác</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+</section>

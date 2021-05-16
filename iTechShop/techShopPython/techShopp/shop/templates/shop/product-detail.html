@@ -1,0 +1,175 @@
+{% extends 'shop/base.html' %}
+
+{% block title %}Trang chủ{% endblock%}
+
+{%block content%}
+
+<main role="main">
+    <div class="card">
+        <div class="container-fliud">
+            <div class="wrapper row">
+                <div class="preview col-md-6">
+                    <div class="preview-pic tab-content">
+                        <div class="tab-pane" id="pic-1">
+                            <img src="https://dienmaythienhoa.vn/static/images/4.%20hinh%20sp/3.%20Hinh%20SP%202/laptop-asus-s330fn-ey037t-1.png">
+                        </div>
+                        <div class="tab-pane" id="pic-2">
+                            <img src="https://mac24h.vn/images/thumbnails/350/350/detailed/48/surface-laptop-go-ice-blue-00-700x700_41jw-sx.png?t=1604712039">
+                        </div>
+                        <div class="tab-pane active" id="pic-3">
+                            <img src="https://xgear.vn/wp-content/uploads/2020/05/Bravo-5-768x768.jpg">
+                        </div>
+                    </div>
+                    <ul class="preview-thumbnail nav nav-tabs">
+                        <li class="active">
+                            <a data-target="#pic-1" data-toggle="tab" class="">
+                                <img src="https://dienmaythienhoa.vn/static/images/4.%20hinh%20sp/3.%20Hinh%20SP%202/laptop-asus-s330fn-ey037t-1.png">
+                            </a>
+                        </li>
+                        <li class="">
+                            <a data-target="#pic-2" data-toggle="tab" class="">
+                                <img src="https://mac24h.vn/images/thumbnails/350/350/detailed/48/surface-laptop-go-ice-blue-00-700x700_41jw-sx.png?t=1604712039">
+                            </a>
+                        </li>
+                        <li class="">
+                            <a data-target="#pic-3" data-toggle="tab" class="active">
+                                <img src="https://xgear.vn/wp-content/uploads/2020/05/Bravo-5-768x768.jpg">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="details col-md-6">
+                    <h2 class="product-title">{{product.pro_name}}</h2>
+                    <p class="product-description-tittle">Bảo hành và dịch vụ:</p>
+                    <p class="product-description">
+                        ♦ Bảo hành 1 năm chính hãng tại các TTBH MSI trên toàn quốc.<br>
+                        ♦ Miễn phí vệ sinh laptop trong thời gian bảo hành.<br>
+                        ♦ Đổi mới trong 7 ngày nếu bị lỗi kĩ thuật.<br>
+                        ♦ Miễn phí quẹt thẻ ATM, Visa, Master.<br>
+                        ♦ Chính sách đảm bảo hài lòng. Chi tiết.<br>
+                        ♦ Linh kiện nâng cấp bảo hành theo tiêu chuẩn nhà sản xuất.<br>
+                        ♦ Hỗ trợ cài đặt hệ điều hành và phần mềm.</p>
+                    <h4 class="price" style="font-size: 2.3rem;">Giá : <span style="font-size: 2.3rem;">{{product.pro_price}} vnđ</span>
+                    </h4>
+                    <p class="vote" style="font-size: 1.6rem;"><strong>100%</strong> hàng <strong>Chất lượng</strong>,
+                        đảm bảo
+                        <strong>Uy
+                            tín</strong>!</p>
+                    <h4 class="price" style="font-size: 1.6rem;">Tình trạng : <span
+                            style="font-size: 1.6rem;">Còn hàng</span></h4>
+                    <div class="form-group" style="font-size: 1.6rem;font-weight: 500;">
+                        <label for="soluong">Số lượng đặt mua:</label>
+                        <input type="number" class="auth-form__input" id="number" name="number" value="1" min="1">
+                    </div>
+                    <button class="header__cart-view-cart btn btn--primary" style="height: 60px;width: 250px;font-size: 2.1rem;padding-top: 14px;" onclick="addCart({{p.pro_id}})">Mua ngay</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="container-fluid">
+            <h3 style="font-size: 2.5rem;font-weight: 600;">Thông tin chi tiết về Sản phẩm</h3>
+            <div class="row">
+                <div class="col" style="color: var(--black-color);font-weight: 600;text-align: center;font-size: 4rem;">
+                    MSI Bravo 15 A4DCR 270VN
+                </div>
+                <img src="https://xgear.vn/wp-content/uploads/2020/05/Bravo-15-1.jpg" alt="" width="100%" height="900px"
+                     style="margin:20px 0 20px 0;">
+                <br>
+                <span style="font-size: 1.8rem; font-family: tahoma, arial, helvetica, sans-serif; color: var(--black-color);">
+                                <strong>MSI Bravo 15 A4DCR 270VN</strong>
+                                đốt cháy thế giới laptop gaming bằng cách kết hợp bộ xử lý AMD Ryzen ™ công nghệ 7nm tiên tiến nhất và đồ họa Radeon ™ RX. Âm thanh Hi-Res nhập vai mang đến trải nghiệm âm thanh không bị mất. Hệ thống nhiệt độc quyền của Cooler Boost 5 đảm bảo tính nhất quán của mọi tác vụ mạnh mẽ. Với các tính năng sẵn sàng cho trò chơi này, bạn đã sẵn sàng chinh phục mọi trận chiến.
+                            </span>
+                <br>
+                <div class="ads">
+                    <div class="grid">
+                        <div class="grid__row" style="margin-top: 10px;">
+                            <div class="grid__column-2-4">
+                                <img width="252px" height="164px"
+                                     src="https://xgear.vn/wp-content/uploads/2020/05/Bravo-des-2.jpg" alt=""
+                                     class="ads-img">
+                            </div>
+                            <div class="grid__column-2-4">
+                                <img width="252px" height="164px"
+                                     src="https://xgear.vn/wp-content/uploads/2020/05/Bravo-des-3.jpg" alt=""
+                                     class="ads-img">
+                            </div>
+                            <div class="grid__column-2-4">
+                                <img width="252px" height="164px"
+                                     src="https://xgear.vn/wp-content/uploads/2020/05/Bravo-des-4.jpg" alt=""
+                                     class="ads-img">
+                            </div>
+                            <div class="grid__column-2-4">
+                                <img width="252px" height="164px"
+                                     src="https://xgear.vn/wp-content/uploads/2020/05/Bravo-des-5.jpg" alt=""
+                                     class="ads-img">
+                            </div>
+                            <div class="grid__column-2-4">
+                                <img width="252px" height="164px"
+                                     src="https://xgear.vn/wp-content/uploads/2020/05/Bravo-des-6.jpg" alt=""
+                                     class="ads-img">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <span style="font-size: 1.8rem; font-family: tahoma, arial, helvetica, sans-serif; color: var(--black-color);">
+                                <strong>MỎNG HƠN VÀ NHẸ HƠN NHỜ VỎ NHÔM ALUMINUM
+                                    THIN & LIGHT ALUMINUM HAIR-BRUSHED AESTHETICS</strong>
+                                    Với thiết kế mặt trên và mặt bàng phím bằng kim loại, kết hợp với thiết kế tương lai hoàn toàn mới cho trận chiến mới.
+                            </span>
+                <br>
+                <img src="https://xgear.vn/wp-content/uploads/2020/05/Bravo-des-9-1024x1016.jpg" alt="" width="100%"
+                     height="900px" style="margin:20px 0 20px 0;">
+                <br>
+                <span style="font-size: 1.8rem; font-family: tahoma, arial, helvetica, sans-serif; color: var(--black-color);">
+                                <strong>MSI Bravo 15 A4DCR 270VN</strong>
+                                thiết kế viền màn hình benzel siêu mỏng cho trải nghiệm hình ảnh đẹp hơn và không bị phân tâm.
+                            </span>
+                <br>
+                <img src="https://xgear.vn/wp-content/uploads/2018/08/gf63img7.jpg" alt="" width="100%" height="900px"
+                     style="margin:20px 0 20px 0;">
+                <br>
+                <span style="font-size: 1.8rem; font-family: tahoma, arial, helvetica, sans-serif; color: var(--black-color);">
+                                Giải pháp tản nhiệt chuyên dụng cho cả CPU và GPU với tối đa 7 ống dẫn nhiệt. Hoạt động hài hòa bằng cách giảm thiểu nhiệt và tối đa hóa luồng không khí. Do đó hiệu suất chơi game mượt mà trong khung máy nhỏ gọn.
+                            </span>
+                <br>
+                <img src="https://xgear.vn/wp-content/uploads/2020/05/Bravo-des-10.jpg" alt="" width="100%"
+                     height="900px" style="margin:20px 0 20px 0;">
+                <br>
+            </div>
+        </div>
+    </div>
+    </div>
+    <!-- End block content -->
+</main>
+
+<footer class="footer">
+    <div class="footer__logo">
+        <img class="footer__logo-img footer" src="https://cdn.worldvectorlogo.com/logos/itech.svg"
+             alt="Itech logo vector">
+    </div>
+    <p class="footer-text">ITECH chuyên Laptop Gaming MSI & Asus & Acer, máy tính PC chính hãng</p>
+    <p class="footer-text">Powered by Team 7</p>
+</footer>
+<script type="text/javascript">
+
+            $(document).ready(function(){
+            });
+            function addCart(id){
+
+                num = $("#number").val();
+                if(!num){
+                    num =1;
+                }
+                $.post('/shop/addcart',{'id':id,'num':num,'csrfmiddlewaretoken':'{{csrf_token}}'}, function(data){
+
+                alert("bạn da mua duoc san pham")
+                });
+
+            }
+
+        </script>
+<script src="https://code.jquery.com/jquery-latest.js"></script>
+<script src="./assets/fonts/bootstrap-3.4.1-dist/bootstrap-3.4.1-dist/js/bootstrap.min.js"></script>
+{%endblock%}
